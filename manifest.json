@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "i will make a webbusite become uwu",
 
-  "permissions": ["storage", "scripting", "activeTab", "storage", "tabs"],
+  "permissions": ["storage"],
 
   "action": {
     "default_popup": "popup.html",
