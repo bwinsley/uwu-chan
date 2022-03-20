@@ -1,13 +1,12 @@
 "use strict";
 chrome.runtime.onInstalled.addListener(function () {
-    chrome.storage.local.set({ "state": true }, function () {
-        console.log("setting state to true");
+    chrome.storage.local.set({ "state": false }, function () {
+        console.log("setting state to false");
     });
-    chrome.storage.local.set({ "intensity": 10 });
+    chrome.storage.local.set({ "uwu-level": 100 }, function () {
+        console.log("setting uwu-level to 100");
+    });
     console.log("uwu-chan was installed");
-    console.log("State set to ON");
+    console.log("State set to OFF");
     return;
-});
-chrome.storage.onChanged.addListener(function (changes, areaName) {
-    chrome.tabs.reload();
 });

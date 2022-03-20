@@ -1,7 +1,7 @@
 
 let toggle = document.getElementById("toggle");
 
-chrome.storage.sync.get("state", (items) => {
+chrome.storage.local.get("state", (items) => {
     const element = document.getElementById("toggle");
 
     if (element != null) {
@@ -18,17 +18,17 @@ chrome.storage.sync.get("state", (items) => {
 if (toggle != null) {
     toggle.onclick = function() {
         console.log("user clicked the button");
-        chrome.storage.sync.get("state", (items) => {
+        chrome.storage.local.get("state", (items) => {
             const element = document.getElementById("toggle");
             if (items["state"]) {
-                chrome.storage.sync.set({"state": false}, () => {
+                chrome.storage.local.set({"state": false}, () => {
                     console.log("user toggled state to false");
                     element!.innerHTML = "uwu-chan is off :(";
                     element!.style.backgroundColor = "#D85B5B";
                     return;
                 });
             } else {
-                chrome.storage.sync.set({"state": true}, () => {
+                chrome.storage.local.set({"state": true}, () => {
                     console.log("user toggled state to true");
                     element!.innerHTML = "uwu-chan is turned on!";
                     element!.style.backgroundColor = "#5BD876";
@@ -37,6 +37,8 @@ if (toggle != null) {
             }
             return;
         });
+        chrome.tabs.reload();
+
     }
 }
 
