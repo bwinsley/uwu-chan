@@ -1,3 +1,6 @@
+// Run after every chrome page loads
+// This can be changed in manifest.json
+
 function replace(text: string, level: number) {
     let words = text.split(" ");
 

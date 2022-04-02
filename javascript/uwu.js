@@ -1,4 +1,6 @@
 "use strict";
+// Run after every chrome page loads
+// This can be changed in manifest.json
 function replace(text, level) {
     var words = text.split(" ");
     for (var i in words) {

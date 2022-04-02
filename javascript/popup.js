@@ -36,6 +36,6 @@ if (toggle != null) {
             }
             return;
         });
-        chrome.tabs.reload();
+        document.getElementById("reload").innerHTML = "pwease reload to see changes uwu";
     };
 }
